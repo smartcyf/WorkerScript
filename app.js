@@ -15,14 +15,14 @@ Ext.Loader.setPath({
 });
 
 Ext.application({
-    name: 'H5Test',
+    name: 'Worker',
 
     requires: [
         'Ext.MessageBox'
     ],
 
     views: [
-        'Main'
+        'Main','Login'
     ],
 
     icon: {
@@ -48,7 +48,7 @@ Ext.application({
         // Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('H5Test.view.Main'));
+        Ext.Viewport.add(Ext.create('Worker.view.Login'));
     },
 
     onUpdated: function() {

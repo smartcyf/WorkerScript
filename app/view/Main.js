@@ -1,4 +1,4 @@
-Ext.define('H5Test.view.Main', {
+Ext.define('Worker.view.Main', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.main',
     requires: [
