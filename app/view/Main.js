@@ -4,15 +4,13 @@ Ext.define('Worker.view.Main', {
     requires: [
         'Ext.TitleBar',
         'Ext.Video',
-
+        'Worker.view.mainPage.Main'
     ],
     config: {
         id: 'mainView',
         fullscreen: true,
         tabBarPosition: 'bottom',
-
         ui:'light',
-
         tabBar:
         {
             ui:'light',
@@ -21,12 +19,11 @@ Ext.define('Worker.view.Main', {
                 pack:'center'
             }
         },
-
-
         items: [
             {
+                xtype:'mainPage',
                 iconCls:'home',
-                title: 'home'
+                title: '主页'
             },
             {
                 iconCls:'home',
