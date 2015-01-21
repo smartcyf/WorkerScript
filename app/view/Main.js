@@ -3,13 +3,13 @@ Ext.define('Worker.view.Main', {
     alias: 'widget.main',
     requires: [
         'Ext.TitleBar',
-        'Ext.Video',
-        'Worker.view.mainPage.Main'
+        'Worker.view.mainPage.Main',
+        'Worker.view.schedulePage.ScheduleDetail'
     ],
     config: {
-        id: 'mainView',
         fullscreen: true,
         tabBarPosition: 'bottom',
+        activeItem: 2,
         ui:'light',
         tabBar:
         {
@@ -21,14 +21,16 @@ Ext.define('Worker.view.Main', {
         },
         items: [
             {
+                xtype:'schedule',
+                iconCls:'home',
+                title: '日期安排'
+            },
+            {
                 xtype:'mainPage',
                 iconCls:'home',
                 title: '主页'
-            },
-            {
-                iconCls:'home',
-                title: 'home'
             }
+
         ]
     }
 });

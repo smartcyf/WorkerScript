@@ -7,7 +7,6 @@ Ext.define(
         extend: 'Ext.Panel',
         config: {
             id: 'orderDetail',
-            title: '12121212',
             layout: 'vbox',
             items: [
                 {
@@ -72,7 +71,11 @@ Ext.define(
                             ui: 'decline',
                             width: 140,
                             height: 100,
-                            text: '详情'
+                            text: '详情',
+                            handler: function () {
+                                panel = Ext.create('Worker.view.projectPage.ProjectDetail',{title:'大保健'});
+                                Ext.getCmp('mainView').push(panel);
+                            }
                         }
                     ]
                 },
