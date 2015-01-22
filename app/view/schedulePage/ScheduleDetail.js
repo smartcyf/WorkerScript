@@ -12,7 +12,7 @@ Ext.define(
             items:[
                 {
                     xtype: 'container',
-                    width:'20%',
+                    width:100,
                     initialize: function () {
                         var list = Ext.create('Ext.List', {
                             itemTpl: '{title}',
@@ -50,7 +50,7 @@ function curreny(day){
 
 function showDetail( obj, index, target, record, e, eOpts ){
     var list = Ext.create('Ext.List', {
-        itemTpl: '<p>{title}</p><tpl if="status < 1"><p>状态：空闲</p></tpl><tpl if="status > 0"><p>状态：已预约</p></tpl>',
+        itemTpl: '<p>{title}</p><tpl if="status==0"><p>状态：空闲</p></tpl><tpl if="status==1"><p>状态：已预约</p></tpl>',
         width: '100%',
         height: 400,
         data: [
@@ -61,6 +61,8 @@ function showDetail( obj, index, target, record, e, eOpts ){
             {title: '18:00 - 20:00',status:'1'}
         ]
     });
-    Ext.getCmp('tempShow').removeAll(false);
+    Ext.getCmp('tempShow').removeAll();
+    Ext.getCmp('tempShow').hide();
     Ext.getCmp('tempShow').add(list);
+    Ext.getCmp('tempShow').show({type:'slideOut',direction:'right'});
 }
