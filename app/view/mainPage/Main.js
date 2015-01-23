@@ -5,6 +5,7 @@ Ext.define('Worker.view.mainPage.Main', {
     extend: 'Ext.NavigationView',
     alias: 'widget.mainPage',
     config: {
+<<<<<<< HEAD
         id:'mainView',
         items: [
             {
@@ -36,6 +37,39 @@ Ext.define('Worker.view.mainPage.Main', {
                     ]
                 },
                 {
+=======
+        
+        navigationBar: {
+            ui: 'light',
+            margin : '20 0 0 0',
+            items: [
+                {
+                    iconMask : true,
+                    iconCls : 'locate',
+                    hidden : false,
+                    text: '报警电话',
+                    ui: 'forward',
+                    id: 'sos',
+                    align: 'left'
+                },
+                {
+                    iconMask : true,
+                    iconCls : 'star',
+                    hidden : false,
+
+                    text: '客服电话',
+                    id: 'serviceNum',
+                    ui: 'action-round',
+                    align: 'right'
+                }
+            ]
+        },
+        items: [
+            {
+            title: 'JOY',
+            items: [
+                {
+>>>>>>> origin/master
                     xtype: 'container',
                     layout: 'vbox',
                     items: [
@@ -95,6 +129,7 @@ Ext.define('Worker.view.mainPage.Main', {
                                         {
                                             xtype: 'label',
                                             html: '订单号:23232323'
+<<<<<<< HEAD
                                         },
                                         {
                                             xtype: 'label',
@@ -102,6 +137,15 @@ Ext.define('Worker.view.mainPage.Main', {
                                         },
                                         {
                                             xtype: 'label',
+=======
+                                        },
+                                        {
+                                            xtype: 'label',
+                                            html: '预约时间:2014-12-12'
+                                        },
+                                        {
+                                            xtype: 'label',
+>>>>>>> origin/master
                                             html: '预约持续时间:180'
                                         },
                                         {
