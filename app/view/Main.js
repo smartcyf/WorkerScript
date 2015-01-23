@@ -4,7 +4,8 @@ Ext.define('Worker.view.Main', {
     requires: [
         'Ext.TitleBar',
         'Worker.view.mainPage.Main',
-        'Worker.view.schedulePage.ScheduleDetail'
+        'Worker.view.schedulePage.ScheduleDetail',
+        'Worker.view.userPage.UserInfo'
     ],
     config: {
         fullscreen: true,
@@ -29,6 +30,11 @@ Ext.define('Worker.view.Main', {
                 xtype:'mainPage',
                 iconCls:'home',
                 title: '主页'
+            },
+            {
+                xtype:'UserInfo',
+                iconCls:'home',
+                title: '个人信息'
             }
 
         ]

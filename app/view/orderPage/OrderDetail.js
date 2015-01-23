@@ -95,15 +95,15 @@ Ext.define(
                             items: [
                                 {
                                     xtype: 'label',
-                                    html: '项目名称:大保健'
+                                    html: '项目名称:小保健'
                                 },
                                 {
                                     xtype: 'label',
-                                    html: '预计时常:100'
+                                    html: '预计时常:125'
                                 },
                                 {
                                     xtype: 'label',
-                                    html: '项目价格:100'
+                                    html: '项目价格:90'
                                 }
                             ]
                         },
@@ -112,7 +112,11 @@ Ext.define(
                             ui: 'decline',
                             width: 140,
                             height: 100,
-                            text: '详情'
+                            text: '详情',
+                            handler: function () {
+                                panel = Ext.create('Worker.view.projectPage.ProjectDetail',{title:'小保健'});
+                                Ext.getCmp('mainView').push(panel);
+                            }
                         }
                     ]
                 },
