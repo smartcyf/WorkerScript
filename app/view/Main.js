@@ -5,12 +5,14 @@ Ext.define('Worker.view.Main', {
         'Ext.TitleBar',
         'Worker.view.mainPage.Main',
         'Worker.view.schedulePage.ScheduleDetail',
-        'Worker.view.userPage.UserInfo'
+        'Worker.view.userPage.UserInfo',
+        'Worker.view.messagePage.MessageMain',
+        'Worker.view.accountPage.AccountMain'
     ],
     config: {
         fullscreen: true,
         tabBarPosition: 'bottom',
-        activeItem: 2,
+        activeItem: 3,
         ui:'light',
         tabBar:
         {
@@ -30,6 +32,16 @@ Ext.define('Worker.view.Main', {
                 xtype:'mainPage',
                 iconCls:'home',
                 title: '主页'
+            },
+            {
+                xtype:'MessageMain',
+                iconCls:'home',
+                title: '平台咨询'
+            },
+            {
+                xtype:'accountMain',
+                iconCls:'home',
+                title: '个人账户'
             },
             {
                 xtype:'UserInfo',

@@ -46,7 +46,7 @@ Ext.define(
                     xtype: 'video',
                     width: 300,
                     height: 250,
-                    url: "resources/vcr/c.MOV",
+                    url: "apple-iphone4-design_video-us-20100607_848x480.mov",
                     flex: 2,
                     border: 1,
                     style: 'border-color: black; border-style: solid;',

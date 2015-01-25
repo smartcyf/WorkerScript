@@ -16,18 +16,18 @@ Ext.define(
                     title: 'JOY',
                     items: [
                         {
-                            iconMask : true,
-                            iconCls : 'locate',
-                            hidden : false,
+                            iconMask: true,
+                            iconCls: 'locate',
+                            hidden: false,
                             text: '报警电话',
                             ui: 'forward',
                             id: 'sos',
                             align: 'left'
                         },
                         {
-                            iconMask : true,
-                            iconCls : 'star',
-                            hidden : false,
+                            iconMask: true,
+                            iconCls: 'star',
+                            hidden: false,
 
                             text: '客服电话',
                             id: 'serviceNum',
@@ -78,7 +78,7 @@ function curreny(day) {
 
 function showDetail(obj, index, target, record, e, eOpts) {
     var list = Ext.create('Ext.List', {
-        itemTpl: '<p>{title}</p><tpl if="status==0"><p>状态：空闲</p></tpl><tpl if="status==1"><p>状态：已预约</p></tpl>',
+        itemTpl: '<div><p>{title}</p><tpl if="status==0"><p><span id="status_{id}">状态：空闲</span></p></div><div><button style="height: 50px;width: 100px;" type="button" onclick="changeStatus({id})">休息</button></div></tpl><tpl if="status==1"><p>状态：已预约</p></div></tpl>',
         width: '100%',
         height: 400,
         border: 1,
@@ -97,4 +97,8 @@ function showDetail(obj, index, target, record, e, eOpts) {
     Ext.getCmp('tempShow').hide();
     Ext.getCmp('tempShow').add(list);
     Ext.getCmp('tempShow').show({type: 'slideOut', direction: 'right'});
+}
+function changeStatus(id){
+    Ext.get('status_'+id).setHtml('状态：休息');
+    this.attr("disabled","true");
 }
