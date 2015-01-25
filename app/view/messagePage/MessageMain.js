@@ -5,7 +5,7 @@ Ext.define(
     'Worker.view.messagePage.MessageMain',
     {
         extend: 'Ext.Panel',
-        alias: 'widget.MessageMain',
+        alias: 'widget.messageMain',
         config: {
             layout: 'vbox',
             items: [
@@ -53,11 +53,11 @@ Ext.define(
                             items: [
                                 {
                                     xtype: 'label',
-                                    html: '培训信息'
+                                    html: '注射去皱,去纹培训'
                                 },
                                 {
                                     xtype: 'label',
-                                    html: '<p>xxxxxxxxxxxxxxxxx</p><p>sdfsdfsdfdfdsfsd</p><p>sdfsdfsdfdfdsfsd</p>'
+                                    html: '<p>美容师的职业道德及个人形象，美容院的服务流程。人际关系的沟通，专业医学常识，皮肤的结构及分类，骨骼，肌肉，经络与穴位分布，皮肤深层保养</p>'
                                 }
                             ]
                         },
@@ -111,11 +111,11 @@ Ext.define(
                             items: [
                                 {
                                     xtype: 'label',
-                                    html: '培训信息'
+                                    html: '芳香美疗SPA'
                                 },
                                 {
                                     xtype: 'label',
-                                    html: '<p>xxxxxxxxxxxxxxxxx</p><p>sdfsdfsdfdfdsfsd</p><p>sdfsdfsdfdfdsfsd</p>'
+                                    html: '<p>香薰法的概念，香薰从业人员的职业道德礼仪，芳香产品的认识SPA馆经典疗法，精油的功效，特性，用途。基础油的作用，复发精油的调配，使用方法</p>'
                                 }
                             ]
                         },

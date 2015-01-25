@@ -46,78 +46,89 @@ Ext.define('Worker.view.mainPage.Main', {
                             style: 'border-color: black; border-style: solid;',
                             items: [
                                 {
-                                    xtype: 'container',
-                                    layout: 'vbox',
-                                    width: '70%',
+                                    xtype: 'fieldset',
+                                    width: '75%',
                                     items: [
                                         {
-                                            xtype: 'label',
-                                            html: '订单号:1212121212'
+                                            xtype: 'textfield',
+                                            label: '订单号',
+                                            value:'1132452',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '预约时间:2014-12-12'
+                                            xtype: 'textfield',
+                                            label: '预约时间',
+                                            value:'2014-12-12 10:00:00',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '预约持续时间:100'
+                                            xtype: 'textfield',
+                                            label: '预约持续时间',
+                                            value:'100',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '用户地址:xxxxxxxxxxxxxx'
+                                            xtype: 'textfield',
+                                            label: '用户地址',
+                                            value:'海淀区苏州街公寓15-2-305',
+                                            disabled: true
                                         }
                                     ]
                                 },
                                 {
                                     xtype: 'button',
-                                    ui: 'decline',
-                                    width: 140,
-                                    height: 100,
+                                    ui: 'normal',
                                     text: '订单详情',
                                     handler: function () {
-                                        panel = Ext.create('Worker.view.orderPage.OrderDetail',{title:'12121212'});
+                                        panel = Ext.create('Worker.view.orderPage.OrderDetail',{title:'1132452'});
                                         Ext.getCmp('mainView').push(panel);
                                     }
                                 }
                             ]
                         },
                         {
+
                             xtype: 'container',
                             layout: 'hbox',
                             border: 1,
                             style: 'border-color: black; border-style: solid;',
                             items: [
                                 {
-                                    xtype: 'container',
-                                    layout: 'vbox',
-                                    width: '70%',
+                                    xtype: 'fieldset',
+                                    width: '75%',
                                     items: [
                                         {
-                                            xtype: 'label',
-                                            html: '订单号:23232323'
+                                            xtype: 'textfield',
+                                            label: '订单号',
+                                            value:'1008611',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '预约时间:2014-12-12'
+                                            xtype: 'textfield',
+                                            label: '预约时间',
+                                            value:'2014-12-14 14:00:00',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '预约持续时间:180'
+                                            xtype: 'textfield',
+                                            label: '预约持续时间',
+                                            value:'120',
+                                            disabled: true
                                         },
                                         {
-                                            xtype: 'label',
-                                            html: '用户地址:xxxxxxxxxxxxxx'
+                                            xtype: 'textfield',
+                                            label: '用户地址',
+                                            value:'石景山鲁谷路瑞达大厦21-1003',
+                                            disabled: true
                                         }
                                     ]
                                 },
                                 {
                                     xtype: 'button',
-                                    ui: 'decline',
-                                    width: 140,
-                                    height: 100,
+                                    ui: 'normal',
                                     text: '订单详情',
                                     handler: function () {
-                                        panel = Ext.create('Worker.view.orderPage.OrderDetail',{title:'23232323'});
+                                        panel = Ext.create('Worker.view.orderPage.OrderDetail',{title:'1008611'});
                                         Ext.getCmp('mainView').push(panel);
                                     }
                                 }

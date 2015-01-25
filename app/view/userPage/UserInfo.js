@@ -6,7 +6,7 @@ Ext.define(
     {
         extend: 'Ext.Panel',
         requires: ['Ext.Video'],
-        alias: 'widget.UserInfo',
+        alias: 'widget.userInfo',
         config: {
             defaults:{
                 width: '100%'

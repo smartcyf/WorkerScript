@@ -11,9 +11,9 @@ Ext.define(
             id: 'loginView',
             centered: true,
             height: 500,
-            width: '90%',
+            width: 500,
             modal: true,
-            padding: '200 20 0 20',
+            padding: '150 20 0 20',
             layout: {type: 'vbox', align: 'center'},
             items: [
                 {
@@ -52,15 +52,18 @@ Ext.define(
                             }
                         }
                     ]
-                }, {
+                },
+                {
                     xtype: 'container',
-                    layout: 'vbox',
+                    layout: {type: 'vbox', align: 'center'},
                     items: [
                         {
                             xtype: 'fieldset',
                             border: 1,
                             id: 'smsDiv',
                             style: 'border-color: black; border-style: solid;',
+                            width: 400,
+                            height: 95,
                             items: [
                                 {
                                     xtype: 'container',
@@ -69,14 +72,14 @@ Ext.define(
                                         {
                                             xtype: 'textfield',
                                             name: 'phoneNum',
-                                            width: '70%',
+                                            width: 250,
                                             id: 'phoneNum',
                                             label: '手机号',
                                             required: true
                                         },
                                         {
                                             xtype: 'button',
-                                            width: '30%',
+                                            width: 150,
                                             height: 40,
                                             id: 'getSms',
                                             ui: 'action-round',
@@ -96,6 +99,7 @@ Ext.define(
                                 {
                                     xtype: 'container',
                                     layout: 'hbox',
+                                    width: 250,
                                     items: [
                                         {
                                             xtype: 'textfield',
@@ -118,6 +122,8 @@ Ext.define(
                             id: 'passwordDiv',
                             hidden: true,
                             style: 'border-color: black; border-style: solid;',
+                            width: 400,
+                            height: 95,
                             items: [
                                 {
                                     xtype: 'textfield',
@@ -137,28 +143,36 @@ Ext.define(
                         },
                         {
                             xtype: 'button',
-                            width: '100%',
+                            width: 300,
                             height: 40,
                             id: 'btnLogin',
                             ui: 'decline',
                             iconCls: 'user',
                             iconMask: true,
                             text: ' 登录系统 ',
+                            style: 'align: center',
                             handler: function () {
-                                var usernameProxy = Ext.getCmp('username').getValue();
-                                var passwordProxy = Ext.getCmp('password').getValue();
-                                if (usernameProxy == '') {
-                                    Ext.Msg.alert("错误信息", "用户名不能为空.");
-                                    return;
-                                } else if (passwordProxy == '') {
-                                    Ext.Msg.alert("错误信息", "密码不能为空.");
-                                    return;
+                                if (Ext.getCmp('smsDiv').isHidden()) {
+                                    var usernameProxy = Ext.getCmp('username').getValue();
+                                    var passwordProxy = Ext.getCmp('password').getValue();
+                                    if (usernameProxy == '') {
+                                        Ext.Msg.alert("错误信息", "用户名不能为空.");
+                                        Ext.getCmp('username').focus( );
+                                        return;
+                                    } else if (passwordProxy == '') {
+                                        Ext.Msg.alert("错误信息", "密码不能为空.");
+                                        Ext.getCmp('password').focus( );
+                                        return;
+                                    }
+                                } else {
+                                    var verCode = Ext.getCmp('verCode').getValue();
+                                    if (verCode == '') {
+                                        Ext.Msg.alert("错误信息", "验证码不能为空.");
+                                        return;
+                                    }
                                 }
-
-                                if (usernameProxy == "admin" && passwordProxy == "admin") {
-                                    Ext.getCmp('loginView').hide();
-                                    Ext.Viewport.add(Ext.create('Worker.view.Main'));
-                                }
+                                Ext.getCmp('loginView').hide();
+                                Ext.Viewport.add(Ext.create('Worker.view.Main'));
                             }
                         }
                     ]
@@ -180,6 +194,7 @@ function countdown(num) {
         task.cancel(); //当倒数到0时停止
         Ext.getCmp('getSms').enable();
         Ext.getCmp('countdown').setHtml('<font style="color: #ff0000">失败，重新获取</font>');
+        Ext.getCmp('verCode').reset();
     } else {
         task.delay(1000);
     }

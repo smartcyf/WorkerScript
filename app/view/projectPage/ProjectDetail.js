@@ -12,7 +12,7 @@ Ext.define(
             items: [
                 {
                     xtype: 'container',
-                    html: '<center>HD钻石蓝宝石面部护理</center>'
+                    html: '<center>巴厘式按摩</center>'
                 },
                 {
                     xtype: 'container',
@@ -28,10 +28,10 @@ Ext.define(
                             width: '100%',
                             height: 189,
                             data: [
-                                {title: '流程1'},
-                                {title: '流程2'},
-                                {title: '流程3'},
-                                {title: '流程4'}
+                                {title: '双足享受花瓣沐浴'},
+                                {title: '全身精油按摩'},
+                                {title: '脸部及头部放松按摩'},
+                                {title: '享受精致花草姜茶'}
                             ],
                             listeners:{
                                 itemtap:showDetail
@@ -52,12 +52,11 @@ Ext.define(
                         var list = Ext.create('Ext.List', {
                             itemTpl: '{title}',
                             width: '100%',
-                            height: 189,
+                            height: 143,
                             data: [
-                                {title: '产品1'},
-                                {title: '产品2'},
-                                {title: '产品3'},
-                                {title: '产品4'}
+                                {title: '芳香精油'},
+                                {title: '花瓣'},
+                                {title: '花草姜茶'}
                             ]
                         });
                         this.add(list);
