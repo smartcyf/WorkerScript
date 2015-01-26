@@ -16,7 +16,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSet": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
-  "H5Test": "app"
+  "Worker": "app"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractComponent": [],
@@ -639,14 +639,16 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "H5Test.controller.mainMediator": [],
-  "H5Test.view.Login": [],
-  "H5Test.view.Main": [],
-  "H5Test.view.billPage.Main": [],
-  "H5Test.view.lifeTipsPage.Main": [],
-  "H5Test.view.mainPage.Main": [],
-  "H5Test.view.morePage.Main": [],
-  "H5Test.view.myInfoPage.Main": []
+  "Worker.view.Login": [],
+  "Worker.view.Main": [],
+  "Worker.view.accountPage.AccountMain": [],
+  "Worker.view.mainPage.Main": [],
+  "Worker.view.messagePage.MessageMain": [],
+  "Worker.view.orderPage.OrderDetail": [],
+  "Worker.view.projectPage.ProcessDetail": [],
+  "Worker.view.projectPage.ProjectDetail": [],
+  "Worker.view.schedulePage.ScheduleDetail": [],
+  "Worker.view.userPage.UserInfo": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1366,26 +1368,30 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "H5Test.controller.mainMediator": [],
-  "H5Test.view.Login": [
-    "widget.login"
+  "Worker.view.Login": [
+    "widget.loginMian"
   ],
-  "H5Test.view.Main": [
+  "Worker.view.Main": [
     "widget.main"
   ],
-  "H5Test.view.billPage.Main": [
-    "widget.billMain"
+  "Worker.view.accountPage.AccountMain": [
+    "widget.accountMain"
   ],
-  "H5Test.view.lifeTipsPage.Main": [
-    "widget.lifeMain"
+  "Worker.view.mainPage.Main": [
+    "widget.mainPage"
   ],
-  "H5Test.view.mainPage.Main": [
-    "widget.localmain"
+  "Worker.view.messagePage.MessageMain": [
+    "widget.messageMain"
   ],
-  "H5Test.view.morePage.Main": [
-    "widget.moreMain"
+  "Worker.view.orderPage.OrderDetail": [],
+  "Worker.view.projectPage.ProcessDetail": [
+    "widget.processDetail"
   ],
-  "H5Test.view.myInfoPage.Main": [
-    "widget.myInfoMain"
+  "Worker.view.projectPage.ProjectDetail": [],
+  "Worker.view.schedulePage.ScheduleDetail": [
+    "widget.schedule"
+  ],
+  "Worker.view.userPage.UserInfo": [
+    "widget.userInfo"
   ]
 });
