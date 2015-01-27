@@ -58,7 +58,7 @@ Ext.define(
                     id: 'videoctl',
                     style: 'border-color: black; border-style: solid;',
                     initialize: function () {
-                        this.play();
+                        // this.play();
                         
                     }
                 },
