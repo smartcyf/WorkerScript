@@ -20,6 +20,8 @@ Ext.define(
                     xtype: 'titlebar',
                     docked: 'top',
                     title: 'JOY',
+                    ui: 'light',
+                    margin : '20 0 0 0',
                     items: [
                         {
                             iconMask: true,
@@ -44,14 +46,19 @@ Ext.define(
                 },
                 {
                     xtype: 'video',
-                    width: 300,
-                    height: 250,
-                    url: "apple-iphone4-design_video-us-20100607_848x480.mov",
+                    width: "100%",
+                    height: 400,
+                    url: "resources/movie/movie2.mov",
+                    enableControls:false,
                     flex: 2,
                     border: 1,
+                    id: 'videoctl',
                     style: 'border-color: black; border-style: solid;',
+                    autoResume:true,
+                    autoPause:true,
+                    preload:true,
                     initialize: function () {
-                        this.play();
+
                     }
                 },
                 {
@@ -100,6 +107,15 @@ Ext.define(
                     disabled: true
                 }
             ]
+        },
+        listeners: {
+            deactivate: function(){
+                Ext.getCmp('videoctl').stop();
+            },
+            activate: function () {
+                Ext.getCmp('videoctl').play();
+            }
         }
+
     }
 );

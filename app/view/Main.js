@@ -12,7 +12,6 @@ Ext.define('Worker.view.Main', {
     config: {
         fullscreen: true,
         tabBarPosition: 'bottom',
-        activeItem: 2,
         ui: 'light',
         tabBar: {
             ui: 'light',
@@ -23,29 +22,32 @@ Ext.define('Worker.view.Main', {
         },
         items: [
             {
-                xtype: 'schedule',
-                iconCls: 'home',
-                title: '日期安排'
-            },
-            {
-                xtype: 'messageMain',
-                iconCls: 'home',
-                title: '平台资讯'
-            },
-            {
                 xtype: 'mainPage',
                 iconCls: 'home',
                 title: '主页'
+                
             },
             {
-                xtype: 'accountMain',
-                iconCls: 'home',
-                title: '个人账户'
+                xtype: 'schedule',
+                iconCls: 'maps',
+                title: '日期安排'
+                
             },
             {
                 xtype: 'userInfo',
-                iconCls: 'home',
+                iconCls: 'star',
                 title: '个人信息'
+            },
+            {
+                xtype: 'messageMain',
+                iconCls: 'info',
+                title: '平台资讯'
+                
+            },
+            {
+                xtype: 'accountMain',
+                iconCls: 'team',
+                title: '个人账户'
             }
 
         ]

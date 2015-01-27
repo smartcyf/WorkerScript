@@ -10,10 +10,14 @@ Ext.define(
         config: {
             id: 'loginView',
             centered: true,
-            height: 500,
-            width: 500,
+            height: "80%",
+            width: "90%",
             modal: true,
             padding: '150 20 0 20',
+            scrollable: {
+                direction: 'vertical',
+                directionLock: true
+            },
             layout: {type: 'vbox', align: 'center'},
             items: [
                 {
@@ -22,11 +26,10 @@ Ext.define(
                     items: [
                         {
                             xtype: 'button',
-                            width: 140,
+                            width: "50%",
                             height: 40,
                             id: 'sms',
                             ui: 'action-round',
-                            iconCls: 'user',
                             iconMask: true,
                             text: '短信验证 ',
                             handler: function () {
@@ -39,11 +42,10 @@ Ext.define(
                         },
                         {
                             xtype: 'button',
-                            width: 140,
+                            width: "50%",
                             height: 40,
                             id: 'password',
                             ui: 'decline-round',
-                            iconCls: 'user',
                             iconMask: true,
                             text: '密码验证 ',
                             handler: function () {
@@ -62,7 +64,7 @@ Ext.define(
                             border: 1,
                             id: 'smsDiv',
                             style: 'border-color: black; border-style: solid;',
-                            width: 400,
+                            width: 280,
                             height: 95,
                             items: [
                                 {
@@ -72,38 +74,23 @@ Ext.define(
                                         {
                                             xtype: 'textfield',
                                             name: 'phoneNum',
-                                            width: 250,
+                                            width: "100%",
+                                            ui: "normal",
                                             id: 'phoneNum',
                                             label: '手机号',
                                             required: true
-                                        },
-                                        {
-                                            xtype: 'button',
-                                            width: 150,
-                                            height: 40,
-                                            id: 'getSms',
-                                            ui: 'action-round',
-                                            iconCls: 'action',
-                                            iconMask: true,
-                                            text: '获取验证码 ',
-                                            handler: function () {
-                                                this.disable();
-                                                var task = Ext.create('Ext.util.DelayedTask', function () {
-                                                    countdown(20); //设置120秒的倒计时时间
-                                                });
-                                                task.delay(1000);
-                                            }
                                         }
                                     ]
                                 },
                                 {
                                     xtype: 'container',
                                     layout: 'hbox',
-                                    width: 250,
+                                    
                                     items: [
                                         {
                                             xtype: 'textfield',
                                             name: 'verCode',
+                                            width: "100%",
                                             id: 'verCode',
                                             label: '验证码',
                                             required: true
@@ -122,7 +109,7 @@ Ext.define(
                             id: 'passwordDiv',
                             hidden: true,
                             style: 'border-color: black; border-style: solid;',
-                            width: 400,
+                            width: 330,
                             height: 95,
                             items: [
                                 {
@@ -143,8 +130,25 @@ Ext.define(
                         },
                         {
                             xtype: 'button',
-                            width: 300,
+                            width: 140,
                             height: 40,
+                            id: 'getSms',
+                            ui: 'action-round',
+                            iconMask: true,
+                            text: '获取验证码 ',
+                            handler: function () {
+                                this.disable();
+                                var task = Ext.create('Ext.util.DelayedTask', function () {
+                                    countdown(20); //设置120秒的倒计时时间
+                                });
+                                task.delay(1000);
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            width: "70%",
+                            height: 40,
+                            margin: '20 0 0 0',
                             id: 'btnLogin',
                             ui: 'decline',
                             iconCls: 'user',

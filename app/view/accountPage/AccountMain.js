@@ -13,6 +13,8 @@ Ext.define(
                     xtype: 'titlebar',
                     docked: 'top',
                     title: 'JOY',
+                    ui: 'light',
+                    margin : '20 0 0 0',
                     items: [
                         {
                             iconMask: true,

@@ -6,13 +6,10 @@ Ext.define('Worker.view.mainPage.Main', {
     alias: 'widget.mainPage',
     config: {
         id:'mainView',
-        items: [
-            {
-            items: [
-                {
-                    xtype: 'titlebar',
-                    docked: 'top',
-                    title: 'JOY',
+        navigationBar : {
+                ui: 'light',
+                margin : '20 0 0 0',
+                title: 'JOY',
                     items: [
                         {
                             iconMask : true,
@@ -34,7 +31,10 @@ Ext.define('Worker.view.mainPage.Main', {
                             align: 'right'
                         }
                     ]
-                },
+            },
+        items: [
+            {
+            items: [
                 {
                     xtype: 'container',
                     layout: 'vbox',
