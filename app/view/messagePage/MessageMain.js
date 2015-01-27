@@ -8,6 +8,10 @@ Ext.define(
         alias: 'widget.messageMain',
         config: {
             layout: 'vbox',
+            scrollable: {
+                        direction: 'vertical',
+                        directionLock: true
+                    },
             items: [
                 {
                     xtype: 'titlebar',

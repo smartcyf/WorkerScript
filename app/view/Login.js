@@ -10,8 +10,8 @@ Ext.define(
         config: {
             id: 'loginView',
             centered: true,
-            height: "80%",
-            width: "90%",
+            height: "100%",
+            width: "100%",
             modal: true,
             padding: '150 20 0 20',
             scrollable: {

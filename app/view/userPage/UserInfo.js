@@ -15,6 +15,10 @@ Ext.define(
                 type: 'vbox',
                 align: 'middle'
             },
+            scrollable: {
+                        direction: 'vertical',
+                        directionLock: true
+                    },
             items: [
                 {
                     xtype: 'titlebar',
@@ -47,18 +51,15 @@ Ext.define(
                 {
                     xtype: 'video',
                     width: "100%",
-                    height: 400,
+                    height: 300,
                     url: "resources/movie/movie2.mov",
-                    enableControls:false,
                     flex: 2,
                     border: 1,
                     id: 'videoctl',
                     style: 'border-color: black; border-style: solid;',
-                    autoResume:true,
-                    autoPause:true,
-                    preload:true,
                     initialize: function () {
-
+                        this.play();
+                        
                     }
                 },
                 {
@@ -111,9 +112,6 @@ Ext.define(
         listeners: {
             deactivate: function(){
                 Ext.getCmp('videoctl').stop();
-            },
-            activate: function () {
-                Ext.getCmp('videoctl').play();
             }
         }
 

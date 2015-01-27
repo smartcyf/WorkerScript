@@ -6,6 +6,10 @@ Ext.define('Worker.view.mainPage.Main', {
     alias: 'widget.mainPage',
     config: {
         id:'mainView',
+        scrollable: {
+                        direction: 'vertical',
+                        directionLock: true
+                    },
         navigationBar : {
                 ui: 'light',
                 margin : '20 0 0 0',
